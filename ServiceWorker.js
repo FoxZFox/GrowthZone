@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-GrowthZone-0.1.0";
 const contentToCache = [
     "Build/GrowthZone.loader.js",
-    "Build/GrowthZone.framework.js.br",
-    "Build/GrowthZone.data.br",
-    "Build/GrowthZone.wasm.br",
+    "Build/GrowthZone.framework.js",
+    "Build/GrowthZone.data",
+    "Build/GrowthZone.wasm",
     "TemplateData/style.css"
 
 ];
