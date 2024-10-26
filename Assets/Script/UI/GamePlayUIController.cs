@@ -173,10 +173,16 @@ public class GamePlayUIController : MonoBehaviour
                 break;
         }
     }
-    public async void ShowCardText(int _startFirst)
+    public void ShowCardText(int _startFirst)
+    {
+        StartCoroutine(ShowCardTextCoroutine(_startFirst));
+    }
+
+    private IEnumerator ShowCardTextCoroutine(int _startFirst)
     {
         card1Button.interactable = false;
         card2Button.interactable = false;
+
         if (_startFirst == 0)
         {
             card1Text.text = "First";
@@ -187,7 +193,9 @@ public class GamePlayUIController : MonoBehaviour
             card1Text.text = "Last";
             card2Text.text = "First";
         }
-        await Task.Delay(1500);
+
+        yield return new WaitForSeconds(1.5f);
+
         drawCardPanel.SetActive(false);
         UpdateActionText();
         actionPanel.SetActive(true);
